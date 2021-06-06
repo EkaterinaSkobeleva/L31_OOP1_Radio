@@ -49,7 +49,24 @@ public class Radio {
         this.currentVolume = currentVolume;
     }
 
-    //-------------------------------------
+    public void increaseVolume(int currentVolume) {
+        if (currentVolume < 10) {
+            currentVolume = currentVolume + 1;
+        }
+        if (currentVolume == 10) {
+            return;
+        }
+    }
+
+    public void decreaseVolume(int currentVolume) {
+        if (currentVolume>0){
+            currentVolume = currentVolume - 1;
+        }
+        if (currentVolume==0){
+            return;
+        }
+    }
+
     public int getMaxNumberRadioStation() {
         return maxNumberRadioStation;
     }
@@ -80,7 +97,23 @@ public class Radio {
         this.currentNumberRadioStation = currentNumberRadioStation;
     }
 
+    public void increaseNumberRadioStation(int currentNumberRadioStation) {
+        if (currentNumberRadioStation < 9) {
+            currentNumberRadioStation = currentNumberRadioStation+1;
+        }
+        if (currentNumberRadioStation == 9) {
+            return;
+        }
+    }
 
+    public void decreaseNumberRadioStation(int currentNumberRadioStation) {
+        if (currentNumberRadioStation > 0) {
+            currentNumberRadioStation = currentNumberRadioStation - 1;
+        }
+        if (currentNumberRadioStation == 0) {
+            return;
+        }
+    }
     public boolean isOn() {
         return on;
     }
