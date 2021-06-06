@@ -11,38 +11,21 @@ class RadioTest {
     }
 
     @Test
-    void getName() {
+    public void shouldInitFieldToZeroValues() {
+        Radio radio = new Radio();
+        assertNull(Radio.name);
+        assertEquals(0, radio.maxNumberRadioStation);
+        assertEquals(0, radio.minNumberRadioStation);
+        assertEquals(0, radio.currentNumberRadioStation);
+        assertFalse(radio.On);
     }
 
     @Test
-    void setName() {
+    public void shouldChangeFields() {
+        Radio radio = new Radio();
+        assertEquals(0, radio.currentNumberRadioStation);
+        radio.currentNumberRadioStation = -100;
+        assertEquals(-100, radio.currentNumberRadioStation);
     }
 
-    @Test
-    void getMaxVolume() {
-    }
-
-    @Test
-    void setMaxVolume() {
-    }
-
-    @Test
-    void getMinVolume() {
-    }
-
-    @Test
-    void setMinVolume() {
-    }
-
-    @Test
-    void getCurrentVolume() {
-    }
-
-    @Test
-    void setCurrentVolume() {
-    }
-
-    @Test
-    void isOn() {
-    }
 }
