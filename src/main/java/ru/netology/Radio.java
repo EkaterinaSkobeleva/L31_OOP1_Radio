@@ -34,66 +34,26 @@ public class Radio {
         this.minVolume = minVolume;
     }
 
-    public int increaseVolume(int currentVolume) {
-        // System.out.println("Innerincrease: " + currentVolume);
+    public void setCurrentVolume(int volume) {
+        this.currentVolume = volume;
+    }
 
-        if (currentVolume < 10) {
+    public int getCurrentVolume() {
+        return currentVolume;
+    }
+
+    public void increaseVolume() {
+        if (currentVolume < maxVolume) {
             currentVolume = currentVolume + 1;
-            // System.out.println("increase1: " + currentVolume);
-
         }
-        if (currentVolume == 10) {
-            return currentVolume;
-            //  System.out.println("increase2: " + currentVolume);
-        }
-
-        return currentVolume;
     }
 
-    public int decreaseVolume(int currentVolume) {
-        // System.out.println("InnerDecrease: " + currentVolume);
-
-        if (currentVolume > 0) {
+    public void decreaseVolume() {
+        if (currentVolume > minVolume) {
             currentVolume = currentVolume - 1;
-            //  System.out.println("Decrease1: " + currentVolume);
-
         }
-        if (currentVolume == 0) {
-            //  System.out.println("Decrease2: " + currentVolume);
-            return currentVolume;
-        }
-
-        return currentVolume;
     }
 
-    public void setCurrentVolume(int currentVolume) {
-
-        int next = increaseVolume(currentVolume);
-        //  System.out.println("Next " + next);
-
-        if (next >= maxVolume) {
-            this.currentVolume = next;
-        }
-
-        int prev = decreaseVolume(currentVolume);
-        // System.out.println("Prev " + prev);
-
-        if (prev <= minVolume) {
-            this.currentVolume = prev;
-        }
-
-        // System.out.println("maxVolume " + maxVolume);
-        // System.out.println("maxVolume " + minVolume);
-        // здесь уверены, что все проверки прошли
-
-    }
-
-    public int getCurrentVolume(int currentVolume) {
-        setCurrentVolume(currentVolume);
-        return currentVolume;
-    }
-
-    //----------------------------------------------------------------------
     public int getMaxNumberRadioStation() {
         return maxNumberRadioStation;
     }
@@ -102,7 +62,7 @@ public class Radio {
         this.maxNumberRadioStation = maxNumberRadioStation;
     }
 
-    public int getMinNumberRadioStation(int currentNumberRadioStation) {
+    public int getMinNumberRadioStation() {
         return minNumberRadioStation;
     }
 
@@ -110,39 +70,34 @@ public class Radio {
         this.minNumberRadioStation = minNumberRadioStation;
     }
 
-
-    public int increaseNumberRadioStation(int currentNumberRadioStation) {
-
-        // System.out.println("InnerIncreaseNumberRadioStation " + currentNumberRadioStation);
-
-        if (currentNumberRadioStation < 9) {
-            currentNumberRadioStation = currentNumberRadioStation + 1;
-            // System.out.println("InnerIncreaseNumberRadioStation1 " + currentNumberRadioStation);
-        }
-        if (currentNumberRadioStation == 9) {
-            currentNumberRadioStation = 0;
-            //System.out.println("InnerIncreaseNumberRadioStation2 " + currentNumberRadioStation);
-        }
+    public int getCurrentNumberRadioStation() {
         return currentNumberRadioStation;
     }
 
-    public int decreaseNumberRadioStation(int currentNumberRadioStation) {
-        System.out.println("InnerDecreaseNumberRadioStation " + currentNumberRadioStation);
+    public void setCurrentNumberRadioStation(int numberRadioStation) {
+        this.currentNumberRadioStation = numberRadioStation;
+    }
 
-        if (currentNumberRadioStation > 0) {
+    public void increaseNumberRadioStation() {
+
+        if (currentNumberRadioStation < maxNumberRadioStation) {
+            currentNumberRadioStation = currentNumberRadioStation + 1;
+        }
+        if (currentNumberRadioStation == maxNumberRadioStation) {
+            currentNumberRadioStation = minNumberRadioStation;
+        }
+    }
+
+    public void decreaseNumberRadioStation() {
+        if (currentNumberRadioStation > minNumberRadioStation) {
             currentNumberRadioStation = currentNumberRadioStation - 1;
-            //  System.out.println("InnerDecreaseNumberRadioStation1 " + currentNumberRadioStation);
         }
-        if (currentNumberRadioStation == 0) {
-            currentNumberRadioStation = 9;
-            // System.out.println("InnerDecreaseNumberRadioStation2 " + currentNumberRadioStation);
+        if (currentNumberRadioStation == minNumberRadioStation) {
+            currentNumberRadioStation = maxNumberRadioStation;
         }
-        return currentNumberRadioStation;
     }
 
     public boolean isOn() {
         return on;
     }
-
-
 }
