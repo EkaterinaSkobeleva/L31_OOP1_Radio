@@ -61,8 +61,8 @@ class RadioTest {
     @Test
     public void shouldIncreaseNumberRadioStation() {
         Radio radio = new Radio();
-        int expected = 8;
-        int numberRadioStation = 7;
+        int expected = 9;
+        int numberRadioStation = 8;
 
         radio.setMaxNumberRadioStation(9);
         radio.setMinNumberRadioStation(0);
@@ -76,8 +76,8 @@ class RadioTest {
     @Test
     public void shouldDecreaseNumberRadioStation() {
         Radio radio = new Radio();
-        int expected = 7;
-        int currentNumberRadioStation = 8;
+        int expected = 0;
+        int currentNumberRadioStation = 1;
 
         radio.setMaxNumberRadioStation(9);
         radio.setMinNumberRadioStation(0);
@@ -122,8 +122,8 @@ class RadioTest {
     @Test
     public void shouldChangeIncreaseVolume() {
         Radio radio = new Radio();
-        int volume = 5;
-        int expected = 6;
+        int volume = 9;
+        int expected = 10;
 
         radio.setMaxVolume(10);
         radio.setMinVolume(0);
@@ -137,8 +137,8 @@ class RadioTest {
     @Test
     public void shouldChangeDecreaseVolume() {
         Radio radio = new Radio();
-        int volume = 9;
-        int expected = 8;
+        int volume = 1;
+        int expected = 0;
 
         radio.setMaxVolume(10);
         radio.setMinVolume(0);

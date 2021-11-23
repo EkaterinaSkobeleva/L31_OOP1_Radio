@@ -82,6 +82,7 @@ public class Radio {
 
         if (currentNumberRadioStation < maxNumberRadioStation) {
             currentNumberRadioStation = currentNumberRadioStation + 1;
+            return;
         }
         if (currentNumberRadioStation == maxNumberRadioStation) {
             currentNumberRadioStation = minNumberRadioStation;
@@ -91,6 +92,7 @@ public class Radio {
     public void decreaseNumberRadioStation() {
         if (currentNumberRadioStation > minNumberRadioStation) {
             currentNumberRadioStation = currentNumberRadioStation - 1;
+            return;
         }
         if (currentNumberRadioStation == minNumberRadioStation) {
             currentNumberRadioStation = maxNumberRadioStation;
